@@ -525,9 +525,9 @@ footer {
     
     .hero {
         flex-direction: column-reverse;
-        justify-content: flex-start;
+        justify-content: center;
         text-align: center;
-        padding-top: 8rem;
+        padding-top: 2rem;
         height: auto;
         min-height: 100vh;
         gap: 0;
