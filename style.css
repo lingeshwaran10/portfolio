@@ -13,7 +13,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* Custom cursor */
+}
+
+@media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none; /* Custom cursor only on desktops */
+    }
 }
 
 html {
@@ -35,7 +40,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.5px;
 }
 
-/* Custom Cursor */
 .cursor-dot, .cursor-outline {
     position: fixed;
     top: 0;
@@ -44,6 +48,12 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
+}
+
+@media (pointer: coarse), (hover: none) {
+    .cursor-dot, .cursor-outline {
+        display: none !important;
+    }
 }
 
 .cursor-dot {
@@ -515,9 +525,12 @@ footer {
     
     .hero {
         flex-direction: column-reverse;
-        justify-content: center;
+        justify-content: flex-start;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 8rem;
+        height: auto;
+        min-height: 100vh;
+        gap: 0;
     }
 
     .hero-content {
@@ -534,7 +547,7 @@ footer {
         width: 60vw;
         height: 60vw;
         max-width: 400px;
-        margin: 0 auto;
+        margin: 0 auto 2rem auto;
     }
     
     .title {
